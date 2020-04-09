@@ -1,5 +1,5 @@
 ﻿using System;
-using UsefulPatterns.Decorator.Example_2;
+using UsefulPatterns.Decorator.ExampleWithBuilder;
 
 namespace UsefulPatterns
 {
@@ -7,7 +7,7 @@ namespace UsefulPatterns
     {
         private static void Main()
         {
-            var decoratorTwo = new DecoratorTwoStarter();
+            var decoratorTwo = new DecoratorThreeStarter();
             decoratorTwo.Run();
 
             Console.ReadKey();
