@@ -1,2 +1,1 @@
-# UsefulPatterns
-Compilation of useful C# Patterns 
+﻿# UsefulPatternsCompilation of useful C# Patterns 1. Abstract Factory2. Decorator3. ...
