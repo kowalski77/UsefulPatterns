@@ -1,4 +1,5 @@
 ﻿using System;
+using UsefulPatterns.Decorator.Example;
 
 namespace UsefulPatterns.Decorator.ExampleWithBuilder
 {

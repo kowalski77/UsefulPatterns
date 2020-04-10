@@ -1,4 +1,4 @@
-﻿namespace UsefulPatterns.Decorator.ExampleWithBuilder
+﻿namespace UsefulPatterns.Decorator.Example
 {
     public interface IMotorBike
     {

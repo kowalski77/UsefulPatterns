@@ -1,8 +1,9 @@
 ﻿using System;
+using UsefulPatterns.Decorator.Example;
 
 namespace UsefulPatterns.Decorator.ExampleWithBuilder
 {
-    public class DecoratorThreeStarter
+    public class DecoratorWithBuilderStarter
     {
         public void Run()
         {

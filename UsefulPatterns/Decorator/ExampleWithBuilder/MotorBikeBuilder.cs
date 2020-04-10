@@ -1,4 +1,6 @@
-﻿namespace UsefulPatterns.Decorator.ExampleWithBuilder
+﻿using UsefulPatterns.Decorator.Example;
+
+namespace UsefulPatterns.Decorator.ExampleWithBuilder
 {
     public class MotorBikeBuilder
     {
