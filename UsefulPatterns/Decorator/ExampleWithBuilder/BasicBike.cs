@@ -1,6 +1,6 @@
 ﻿namespace UsefulPatterns.Decorator.ExampleWithBuilder
 {
-    public class Basic : IMotorBike
+    public class BasicBike : IMotorBike
     {
         public string GetExtras()
         {

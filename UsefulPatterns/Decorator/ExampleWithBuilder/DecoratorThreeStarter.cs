@@ -7,7 +7,7 @@ namespace UsefulPatterns.Decorator.ExampleWithBuilder
         public void Run()
         {
             var motorBike = MotorBikeBuilderExtensions
-                .CreateMotorBike(new Basic())
+                .CreateMotorBike(new BasicBike())
                 .AddExtra(typeof(PowerUpDecorator))
                 .AddExtra(typeof(ExtraWheelDecorator))
                 .Build();
