@@ -12,12 +12,12 @@ namespace UsefulPatterns.Decorator.ExampleWithBuilder
             return builder;
         }
 
-        public static MotorBikeBuilder AddExtra(
-            this MotorBikeBuilder motorBikeBuilder, 
-            Type decoratorType)
+        public static MotorBikeBuilder AddExtra<TDecorator>(
+            this MotorBikeBuilder motorBikeBuilder) where TDecorator : MotorBikeDecorator
         {
-            var motorBikeExtra = Activator.CreateInstance(decoratorType, motorBikeBuilder.MotorBike) 
-                as MotorBikeDecorator;
+            var motorBikeExtra = Activator.CreateInstance(
+                    typeof(TDecorator),
+                    motorBikeBuilder.MotorBike) as MotorBikeDecorator;
 
             motorBikeBuilder.UpdateMotorBike(motorBikeExtra);
 

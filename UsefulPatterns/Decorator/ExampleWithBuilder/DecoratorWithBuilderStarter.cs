@@ -9,8 +9,8 @@ namespace UsefulPatterns.Decorator.ExampleWithBuilder
         {
             var motorBike = MotorBikeBuilderExtensions
                 .CreateMotorBike(new BasicBike())
-                .AddExtra(typeof(PowerUpDecorator))
-                .AddExtra(typeof(ExtraWheelDecorator))
+                .AddExtra<PowerUpDecorator>()
+                .AddExtra<ExtraWheelDecorator>()
                 .Build();
 
             var cost = motorBike.GetCost();
