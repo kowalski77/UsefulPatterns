@@ -1,5 +1,5 @@
 ﻿using System;
-using UsefulPatterns.Decorator.Example;
+using UsefulPatterns.Builder;
 
 namespace UsefulPatterns
 {
@@ -7,10 +7,20 @@ namespace UsefulPatterns
     {
         private static void Main()
         {
-            var decorator = new DecoratorStarter();
-            decorator.Run();
+            //var decorator = new DecoratorStarter();
+            //decorator.Run();
 
-            Console.ReadKey();
+            //Console.ReadKey();
+
+            ICarBuilder carBuilder = new CityCarBuilder();
+            
+            var car = carBuilder
+                .AddExtraPower()
+                .AddExtraPower()
+                .ChangeEngine()
+                .Build();
+
+            Console.WriteLine($"== Build car == {Environment.NewLine}{car.Debug()}");
         }
     }
 }

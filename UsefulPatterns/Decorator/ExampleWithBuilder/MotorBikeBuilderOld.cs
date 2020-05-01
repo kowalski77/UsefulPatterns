@@ -2,11 +2,11 @@
 
 namespace UsefulPatterns.Decorator.ExampleWithBuilder
 {
-    public class MotorBikeBuilder
+    public class MotorBikeBuilderOld
     {
         public IMotorBike MotorBike { get; private set; }
 
-        public MotorBikeBuilder(IMotorBike motorBike)
+        public MotorBikeBuilderOld(IMotorBike motorBike)
         {
             this.MotorBike = motorBike;
         }

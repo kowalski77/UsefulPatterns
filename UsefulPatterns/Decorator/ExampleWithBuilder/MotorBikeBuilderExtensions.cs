@@ -5,15 +5,15 @@ namespace UsefulPatterns.Decorator.ExampleWithBuilder
 {
     public static class MotorBikeBuilderExtensions
     {
-        public static MotorBikeBuilder CreateMotorBike(IMotorBike motorBike)
+        public static MotorBikeBuilderOld CreateMotorBike(IMotorBike motorBike)
         {
-            var builder = new MotorBikeBuilder(motorBike);
+            var builder = new MotorBikeBuilderOld(motorBike);
 
             return builder;
         }
 
-        public static MotorBikeBuilder AddExtra<TDecorator>(
-            this MotorBikeBuilder motorBikeBuilder) where TDecorator : MotorBikeDecorator
+        public static MotorBikeBuilderOld AddExtra<TDecorator>(
+            this MotorBikeBuilderOld motorBikeBuilder) where TDecorator : MotorBikeDecorator
         {
             var motorBikeExtra = Activator.CreateInstance(
                     typeof(TDecorator),

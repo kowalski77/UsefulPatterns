@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <Folder Include="Bridge\" />
-    <Folder Include="Builder\" />
     <Folder Include="Facade\" />
     <Folder Include="Mediator\" />
     <Folder Include="Singleton\" />
