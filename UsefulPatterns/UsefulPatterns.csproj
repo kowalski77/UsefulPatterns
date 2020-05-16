@@ -6,11 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Bridge\" />
-    <Folder Include="Facade\" />
-    <Folder Include="Mediator\" />
-    <Folder Include="Singleton\" />
-    <Folder Include="Observer\" />
+    <Folder Include="PipelinePattern\" />
   </ItemGroup>
 
 </Project>
