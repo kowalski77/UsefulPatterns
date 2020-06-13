@@ -6,7 +6,20 @@ namespace UsefulPatterns
     {
         private static void Main()
         {
-            var fizzBuzzer = new FizzBuzzer(new Display());
+            var display = new Display();
+            //var handler = new FizzBuzzHandler();
+            //handler
+            //    .UseFizz()
+            //    .UseBuzz()
+            //    .Run();
+
+            var handler = new FizzBuzzHandler();
+            handler
+                .Next(new FizzHandler())
+                .Next(new BuzzHandler())
+                .Next(new NoFizzBuzzHandler());
+
+            var fizzBuzzer = new FizzBuzzer(display, handler);
             fizzBuzzer.Run();
         }
     }

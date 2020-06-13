@@ -1,10 +1,10 @@
 ﻿namespace UsefulPatterns.ChainOfResponsibility
 {
-    public abstract class RuleHandler<TRequest, TResponse>
+    public abstract class RuleHandler<TRequest, TResponse> : IRuleHandler<TRequest, TResponse>
     {
-        private RuleHandler<TRequest, TResponse> nextHandler;
+        private IRuleHandler<TRequest, TResponse> nextHandler;
 
-        public RuleHandler<TRequest, TResponse> Next(RuleHandler<TRequest, TResponse> handler)
+        public IRuleHandler<TRequest, TResponse> Next(IRuleHandler<TRequest, TResponse> handler)
         {
             this.nextHandler = handler;
 
