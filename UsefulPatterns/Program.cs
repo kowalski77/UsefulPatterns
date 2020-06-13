@@ -11,11 +11,6 @@ namespace UsefulPatterns
             var range = new FizzBuzzRange(1, 100);
 
             handler
-                .UseFizz()
-                .UseBuzz()
-                .Build();
-
-            handler
                 .Next(new FizzHandler())
                 .Next(new BuzzHandler())
                 .Next(new NoFizzBuzzHandler());
