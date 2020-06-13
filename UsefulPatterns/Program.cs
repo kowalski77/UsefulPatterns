@@ -1,4 +1,4 @@
-﻿using UsefulPatterns.Singleton.Version1;
+﻿using UsefulPatterns.ChainOfResponsibility;
 
 namespace UsefulPatterns
 {
@@ -6,7 +6,8 @@ namespace UsefulPatterns
     {
         private static void Main()
         {
-            var sing = SingletonOne.Instance;
+            var fizzBuzzer = new FizzBuzzer(new Display());
+            fizzBuzzer.Run();
         }
     }
 }
