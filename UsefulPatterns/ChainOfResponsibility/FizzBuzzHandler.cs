@@ -3,7 +3,7 @@
     public class FizzBuzzHandler : RuleHandler<FizzBuzz, Label>
     {
         public override Label Run(FizzBuzz request) =>
-            request.IsFizzBuzz ?
+            request.Number.IsDivisibleBy(3) && request.Number.IsDivisibleBy(5) ?
                 Label.FizzBuzz :
                 base.Run(request);
     }
