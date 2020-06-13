@@ -2,7 +2,7 @@
 
 namespace UsefulPatterns.ChainOfResponsibility
 {
-    public class PositiveNumber
+    public readonly struct PositiveNumber
     {
         public int Number { get; }
 

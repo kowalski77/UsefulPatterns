@@ -6,24 +6,22 @@ namespace UsefulPatterns.ChainOfResponsibility
     {
         private readonly Display display;
         private readonly IRuleHandler<PositiveNumber, Label> handler;
-        private readonly int minNumber;
-        private readonly int maxNumber;
+        private readonly FizzBuzzRange fizzBuzzRange;
+
         
         public FizzBuzzer(
             Display display, 
             IRuleHandler<PositiveNumber, Label> handler, 
-            int minNumber, 
-            int maxNumber)
+            FizzBuzzRange fizzBuzzRange)
         {
             this.display = display;
             this.handler = handler;
-            this.minNumber = minNumber;
-            this.maxNumber = maxNumber;
+            this.fizzBuzzRange = fizzBuzzRange;
         }
 
         public void Run()
         {
-            var range = Enumerable.Range(this.minNumber, this.maxNumber);
+            var range = Enumerable.Range(this.fizzBuzzRange.Min, this.fizzBuzzRange.Max);
             foreach (var number in range)
             {
                 var fizzBuzz = PositiveNumber.Create(number);
