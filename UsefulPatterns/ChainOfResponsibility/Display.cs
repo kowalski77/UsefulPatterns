@@ -8,7 +8,11 @@ namespace UsefulPatterns.ChainOfResponsibility
         {
             if (!string.IsNullOrEmpty(label.Value))
             {
-                Console.WriteLine($"Number: {number} is {label.Value}");
+                Console.WriteLine($"{label.Value}");
+            }
+            else
+            {
+                Console.WriteLine(number);
             }
         }
     }
