@@ -19,7 +19,7 @@ namespace UsefulPatterns
                 .Next(new BuzzHandler())
                 .Next(new NoFizzBuzzHandler());
 
-            var fizzBuzzer = new FizzBuzzer(display, handler);
+            var fizzBuzzer = new FizzBuzzer(display, handler, 1, 100);
             fizzBuzzer.Run();
         }
     }
