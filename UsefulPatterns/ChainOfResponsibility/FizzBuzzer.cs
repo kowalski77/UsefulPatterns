@@ -5,9 +5,11 @@ namespace UsefulPatterns.ChainOfResponsibility
     public class FizzBuzzer
     {
         private readonly Display display;
-        private readonly IRuleHandler<FizzBuzz, Label> handler;
+        private readonly IRuleHandler<PositiveNumber, Label> handler;
 
-        public FizzBuzzer(Display display, IRuleHandler<FizzBuzz, Label> handler)
+        public FizzBuzzer(
+            Display display, 
+            IRuleHandler<PositiveNumber, Label> handler)
         {
             this.display = display;
             this.handler = handler;
@@ -18,7 +20,7 @@ namespace UsefulPatterns.ChainOfResponsibility
             var range = Enumerable.Range(1, 100);
             foreach (var number in range)
             {
-                var fizzBuzz = FizzBuzz.Create(number);
+                var fizzBuzz = PositiveNumber.Create(number);
 
                 var value = this.handler.Run(fizzBuzz);
 

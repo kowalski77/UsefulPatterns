@@ -1,8 +1,8 @@
 ﻿namespace UsefulPatterns.ChainOfResponsibility
 {
-    public class FizzHandler : RuleHandler<FizzBuzz, Label>
+    public class FizzHandler : RuleHandler<PositiveNumber, Label>
     {
-        public override Label Run(FizzBuzz request) => 
+        public override Label Run(PositiveNumber request) => 
             request.Number.IsDivisibleBy(3) ? 
                 Label.Fizz : 
                 base.Run(request);

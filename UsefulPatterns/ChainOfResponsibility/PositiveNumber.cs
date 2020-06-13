@@ -2,23 +2,23 @@
 
 namespace UsefulPatterns.ChainOfResponsibility
 {
-    public class FizzBuzz
+    public class PositiveNumber
     {
         public int Number { get; }
 
-        private FizzBuzz(int number)
+        private PositiveNumber(int number)
         {
             this.Number = number;
         }
 
-        public static FizzBuzz Create(int number)
+        public static PositiveNumber Create(int number)
         {
             if (number < 0)
             {
                 throw new InvalidOperationException("Number must be positive.");
             }
 
-            return new FizzBuzz(number);
+            return new PositiveNumber(number);
         }
     }
 }

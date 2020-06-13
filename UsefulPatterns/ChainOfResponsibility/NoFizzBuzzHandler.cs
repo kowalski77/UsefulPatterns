@@ -1,7 +1,7 @@
 ﻿namespace UsefulPatterns.ChainOfResponsibility
 {
-    public class NoFizzBuzzHandler : RuleHandler<FizzBuzz, Label>
+    public class NoFizzBuzzHandler : RuleHandler<PositiveNumber, Label>
     {
-        public override Label Run(FizzBuzz request) => Label.Empty;
+        public override Label Run(PositiveNumber request) => Label.Empty;
     }
 }
