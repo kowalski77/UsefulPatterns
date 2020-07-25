@@ -16,7 +16,7 @@ namespace UsefulPatterns.Mediator
             mediator.Register(secondParticipant);
 
             var message1 = new MessageOne();
-            mediator.Send(message1, typeof(FirstParticipant));
+            mediator.Send<FirstParticipant>(message1);
 
             Console.ReadKey();
         }

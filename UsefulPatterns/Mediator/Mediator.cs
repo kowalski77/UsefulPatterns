@@ -16,9 +16,9 @@ namespace UsefulPatterns.Mediator
             this.participants[type].Add(participant);
         }
 
-        public void Send<TMessage>(TMessage message, Type type) where TMessage : IMessage
+        public void Send<TType>(IMessage message) where TType : IParticipant
         {
-            var existsValue = this.participants.TryGetValue(type, out var participantsList);
+            var existsValue = this.participants.TryGetValue(typeof(TType), out var participantsList);
             if (!existsValue)
             {
                 return;
