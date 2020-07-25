@@ -1,5 +1,5 @@
 ﻿using System;
-using UsefulPatterns.Mediator;
+using UsefulPatterns.AdvancedMediator;
 
 namespace UsefulPatterns
 {
