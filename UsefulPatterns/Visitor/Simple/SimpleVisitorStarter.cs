@@ -10,9 +10,10 @@ namespace UsefulPatterns.Visitor.Simple
 
             var componentTwo = new ComponentTwo();
             visitorService.Register(componentTwo);
-            var visitorOne = new VisitorOne {Name = "One"};
+            var visitorOne = new VisitorOne();
+            var visitorTwo = new VisitorTwo();
 
-            visitorService.Visit<ComponentTwo>(visitorOne);
+            visitorService.Visit<ComponentTwo>(visitorTwo);
         }
     }
 }
