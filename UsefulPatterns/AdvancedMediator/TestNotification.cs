@@ -1,6 +1,6 @@
 ﻿namespace UsefulPatterns.AdvancedMediator
 {
-    public class TestRequest : IRequest
+    public class TestNotification : INotification
     {
         public string Name { get; set; }
     }

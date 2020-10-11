@@ -1,6 +1,6 @@
 ﻿namespace UsefulPatterns.AdvancedMediator
 {
-    public interface IRequest
+    public interface INotification
     {
     }
 }
