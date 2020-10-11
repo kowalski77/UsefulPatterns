@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -7,6 +7,11 @@
 
   <ItemGroup>
     <Folder Include="Adapter\" />
+    <Folder Include="Composite\" />
+    <Folder Include="Facade\" />
+    <Folder Include="Interpreter\" />
+    <Folder Include="Proxy\" />
+    <Folder Include="Visitor\" />
   </ItemGroup>
 
 </Project>
