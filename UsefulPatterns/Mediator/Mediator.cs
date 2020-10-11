@@ -1,33 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace UsefulPatterns.Mediator
 {
     public class Mediator : IMediator
     {
-        private readonly IDictionary<Type, IList<IParticipant>> participants
-            = new Dictionary<Type, IList<IParticipant>>();
-
-        public void Register(IParticipant participant)
+        public async Task PublishAsync<TRequest>(TRequest request, CancellationToken cancellationToken)
+            where TRequest : INotification
         {
-            var type = participant.GetType();
-            this.participants.TryAdd(type, new List<IParticipant>());
+            var handlers = NotificationHandlers(request);
 
-            this.participants[type].Add(participant);
+            foreach (var handler in handlers)
+            {
+                if (handler != null)
+                {
+                    await handler.HandleAsync(request, cancellationToken).ConfigureAwait(false);
+                }
+            }
         }
 
-        public void Send<TType>(IMessage message) where TType : IParticipant
+        private static IEnumerable<INotificationHandler<TRequest>> NotificationHandlers<TRequest>(TRequest request)
+            where TRequest : INotification
         {
-            var existsValue = this.participants.TryGetValue(typeof(TType), out var participantsList);
-            if (!existsValue)
-            {
-                return;
-            }
+            var requestType = request.GetType();
+            var handlerConcreteType = typeof(INotificationHandler<>).MakeGenericType(requestType);
 
-            foreach (var participant in participantsList)
-            {
-                participant.Receive(message);
-            }
+            var requestHandlerTypes = typeof(Mediator).Assembly.GetTypes()
+                .Where(t => handlerConcreteType.IsAssignableFrom(t))
+                .ToList();
+
+            var handlers =
+                requestHandlerTypes.Select(x => Activator.CreateInstance(x) as INotificationHandler<TRequest>);
+
+            return handlers;
         }
     }
 }

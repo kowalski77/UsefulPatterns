@@ -1,4 +1,4 @@
-﻿namespace UsefulPatterns.MediatorAdvanced
+﻿namespace UsefulPatterns.Mediator
 {
     public interface INotification
     {

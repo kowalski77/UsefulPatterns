@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 
-namespace UsefulPatterns.MediatorAdvanced
+namespace UsefulPatterns.Mediator
 {
     public class AdvancedMediatorStarter
     {

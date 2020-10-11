@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,12 +6,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Visitor\Simple\ComponentTwo.cs~RF152f3ca.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Adapter\" />
     <Folder Include="Composite\" />
     <Folder Include="Facade\" />
     <Folder Include="Interpreter\" />
     <Folder Include="Proxy\" />
-    <Folder Include="Visitor\" />
+    <Folder Include="Visitor\Advanced\" />
   </ItemGroup>
 
 </Project>

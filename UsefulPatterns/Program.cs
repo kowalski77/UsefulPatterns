@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using UsefulPatterns.MediatorAdvanced;
+using UsefulPatterns.Visitor.Simple;
 
 namespace UsefulPatterns
 {
@@ -8,8 +8,8 @@ namespace UsefulPatterns
     {
         private static async Task Main()
         {
-            var mediator = new AdvancedMediatorStarter();
-            await mediator.RunAsync().ConfigureAwait(false);
+            var simpleVisitorStarter = new SimpleVisitorStarter();
+            simpleVisitorStarter.Run();
 
             Console.ReadKey();
         }

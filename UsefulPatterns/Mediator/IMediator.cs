@@ -1,8 +1,11 @@
-﻿namespace UsefulPatterns.Mediator
+﻿using System.Threading;
+using System.Threading.Tasks;
+
+namespace UsefulPatterns.Mediator
 {
     public interface IMediator
     {
-        void Register(IParticipant participant);
-        void Send<TType>(IMessage message) where TType : IParticipant;
+        Task PublishAsync<TRequest>(TRequest request, CancellationToken cancellationToken)
+            where TRequest : INotification;
     }
 }
