@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace UsefulPatterns.Mediator
 {
-    public class AdvancedMediatorStarter
+    public class MediatorStarter
     {
         public async Task RunAsync()
         {
