@@ -2,6 +2,7 @@
 {
     public interface IVisitorService
     {
-        void Register(IVisitableComponent component);
+        void Subscribe<TVisitor>(IVisitableComponent component) where TVisitor : IComponentVisitor;
+        void Visit<TVisitor>(TVisitor visitor) where TVisitor : IComponentVisitor;
     }
 }

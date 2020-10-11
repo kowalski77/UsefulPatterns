@@ -1,29 +1,34 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 
 namespace UsefulPatterns.Visitor.Simple.Abstraction
 {
     public class VisitorService : IVisitorService
     {
-        private static readonly ConcurrentDictionary<Type, IVisitableComponent> VisitableComponents =
-            new ConcurrentDictionary<Type, IVisitableComponent>();
+        private static readonly ConcurrentDictionary<Type, List<IVisitableComponent>> VisitableComponents =
+            new ConcurrentDictionary<Type, List<IVisitableComponent>>();
 
-        public void Register(IVisitableComponent component)
+        public void Subscribe<TVisitor>(IVisitableComponent component) where TVisitor : IComponentVisitor
         {
-            var type = component.GetType();
-            VisitableComponents.TryAdd(type, component);
+            var type = typeof(TVisitor);
+            VisitableComponents.TryAdd(type, new List<IVisitableComponent>());
+            VisitableComponents[type].Add(component);
         }
 
-        public void Visit<TVisitable>(IComponentVisitor visitor) where TVisitable : IVisitableComponent
+        public void Visit<TVisitor>(TVisitor visitor) where TVisitor : IComponentVisitor
         {
-            var existsValue = VisitableComponents.TryGetValue(typeof(TVisitable), out var component);
+            var existsValue = VisitableComponents.TryGetValue(typeof(TVisitor), out var components);
             if (existsValue)
             {
-                component.Receive(visitor);
+                foreach (var component in components)
+                {
+                    component.Receive(visitor);
+                }
                 return;
             }
 
-            Console.WriteLine($"No visitable component for visitor of type: {visitor.GetType().Name}");
+            Console.WriteLine($"No visitable component for visitor of type: {typeof(TVisitor).Name}");
         }
     }
 }

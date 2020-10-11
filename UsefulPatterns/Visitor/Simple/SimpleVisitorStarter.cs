@@ -7,13 +7,14 @@ namespace UsefulPatterns.Visitor.Simple
         public void Run()
         {
             var visitorService = new VisitorService();
+            var componentOne = new ComponentOne(visitorService);
+            var componentTwo = new ComponentTwo(visitorService);
 
-            var componentTwo = new ComponentTwo();
-            visitorService.Register(componentTwo);
             var visitorOne = new VisitorOne();
-            var visitorTwo = new VisitorTwo();
+            visitorService.Visit(visitorOne);
 
-            visitorService.Visit<ComponentTwo>(visitorTwo);
+            var visitorTwo = new VisitorTwo();
+            visitorService.Visit(visitorTwo);
         }
     }
 }
