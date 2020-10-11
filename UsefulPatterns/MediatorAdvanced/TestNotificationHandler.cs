@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace UsefulPatterns.AdvancedMediator
+namespace UsefulPatterns.MediatorAdvanced
 {
     public class TestNotificationHandler : INotificationHandler<TestNotification>
     {
