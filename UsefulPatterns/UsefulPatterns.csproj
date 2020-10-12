@@ -6,10 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Visitor\Simple\ComponentTwo.cs~RF152f3ca.TMP" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Adapter\" />
     <Folder Include="Composite\" />
     <Folder Include="Facade\" />

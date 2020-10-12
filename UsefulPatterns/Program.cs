@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using UsefulPatterns.Visitor.Simple;
+using UsefulPatterns.MediatorSimple;
 
 namespace UsefulPatterns
 {
