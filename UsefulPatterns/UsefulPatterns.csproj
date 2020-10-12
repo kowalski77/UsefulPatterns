@@ -15,7 +15,6 @@
     <Folder Include="Facade\" />
     <Folder Include="Interpreter\" />
     <Folder Include="Proxy\" />
-    <Folder Include="Visitor\Advanced\" />
   </ItemGroup>
 
 </Project>

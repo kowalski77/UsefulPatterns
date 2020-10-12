@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace UsefulPatterns.Mediator
+namespace UsefulPatterns.MediatorAdvanced
 {
     public class Mediator : IMediator
     {

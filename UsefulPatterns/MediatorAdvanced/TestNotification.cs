@@ -1,4 +1,4 @@
-﻿namespace UsefulPatterns.Mediator
+﻿namespace UsefulPatterns.MediatorAdvanced
 {
     public class TestNotification : INotification
     {
