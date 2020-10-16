@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Threading.Tasks;
-using UsefulPatterns.MediatorSimple;
+using UsefulPatterns.Adapter;
 
 namespace UsefulPatterns
 {
     internal class Program
     {
-        private static async Task Main()
+        private static void Main()
         {
-            var simpleVisitorStarter = new SimpleVisitorStarter();
-            simpleVisitorStarter.Run();
+            var adapterStarter = new AdapterStarter();
+            adapterStarter.Run();
 
             Console.ReadKey();
         }

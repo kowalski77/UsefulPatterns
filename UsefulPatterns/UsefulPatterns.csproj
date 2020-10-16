@@ -6,11 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Adapter\" />
     <Folder Include="Composite\" />
     <Folder Include="Facade\" />
     <Folder Include="Interpreter\" />
     <Folder Include="Proxy\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
 </Project>
