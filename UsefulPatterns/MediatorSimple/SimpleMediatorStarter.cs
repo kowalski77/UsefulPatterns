@@ -2,7 +2,7 @@
 
 namespace UsefulPatterns.MediatorSimple
 {
-    public class SimpleVisitorStarter
+    public class SimpleMediatorStarter
     {
         public void Run()
         {
