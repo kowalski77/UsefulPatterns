@@ -1,14 +1,15 @@
 ﻿using System;
+using Newtonsoft.Json;
 
 namespace UsefulPatterns.Adapter
 {
     public class Client
     {
-        private readonly XmlApiAdaptee xmlApiAdaptee;
+        private readonly IXmlApiAdaptee xmlApiAdaptee;
         private readonly IAdapter adapter;
 
         public Client(
-            XmlApiAdaptee xmlApiAdaptee,
+            IXmlApiAdaptee xmlApiAdaptee,
             IAdapter adapter)
         {
             this.xmlApiAdaptee = xmlApiAdaptee;
@@ -18,9 +19,10 @@ namespace UsefulPatterns.Adapter
         public void PrintProductsXml()
         {
             var result = this.xmlApiAdaptee.GetProducts();
+            var jsonFormat = JsonConvert.SerializeObject(result, Formatting.Indented);
 
-            Console.WriteLine("Xml format:");
-            Console.WriteLine(result);
+            Console.WriteLine("Json format:");
+            Console.WriteLine(jsonFormat);
         }
 
         public void PrintProductsJson()

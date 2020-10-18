@@ -1,33 +1,21 @@
-﻿using System;
-using System.Linq;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace UsefulPatterns.Adapter
 {
     // Concrete Adapter
     public class JsonAdapter : IAdapter
     {
-        private readonly XmlApiAdaptee xmlApiAdaptee;
+        private readonly IXmlApiAdaptee xmlApiAdaptee;
 
-        public JsonAdapter(XmlApiAdaptee xmlApiAdaptee)
+        public JsonAdapter(IXmlApiAdaptee xmlApiAdaptee)
         {
             this.xmlApiAdaptee = xmlApiAdaptee;
         }
 
         public string GetProducts()
         {
-            var products = this.xmlApiAdaptee.GetProducts()
-                .Element("Products")
-                ?.Elements("Product")
-                .Select(x => new Product
-                {
-                    Id = Convert.ToInt32(x.Attribute("Id")?.Value),
-                    Name = x.Attribute("Name")?.Value,
-                    Description = x.Attribute("Description")?.Value,
-                    Price = Convert.ToDecimal(x.Attribute("Price")?.Value)
-                });
-
-            var result  = JsonConvert.SerializeObject(products, Formatting.Indented);
+            var products = this.xmlApiAdaptee.GetProducts();
+            var result = JsonConvert.SerializeObject(products, Formatting.Indented);
 
             return result;
         }

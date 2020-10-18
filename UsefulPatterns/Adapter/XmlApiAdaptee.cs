@@ -5,7 +5,7 @@ using System.Xml.Linq;
 namespace UsefulPatterns.Adapter
 {
     // Adaptee
-    public class XmlApiAdaptee
+    public class XmlApiAdaptee : IXmlApiAdaptee
     {
         public XDocument GetProducts()
         {
